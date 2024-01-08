@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+</head>
+<body>
+
+<h1>All Players</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Id team</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player : ${allPlayers}">
+        <td th:text="${player.getId_player()}"></td>
+        <td th:text="${player.getFirst_name()}"></td>
+        <td th:text="${player.getLast_name()}"></td>
+        <td th:text="${player.getTeam().getId_team()}"></td>
+    </tr>
+    </tbody>
+</table>
+<h1>Add Player</h1>
+<form action="/add-player" method="post">
+    <label for="first_name">first_name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+    <br>
+    <label for="last_name">first_name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+    <br>
+    <label for="id_team">ID team:</label>
+    <input type="number" id="id_team" name="id_team" required>
+    <br>
+    <input type="submit" value="Add Player">
+</form>
+
+</body>
+</html>

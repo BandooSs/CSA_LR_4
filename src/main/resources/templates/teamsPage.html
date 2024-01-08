@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Team</title>
+</head>
+<body>
+<h1>All Teams</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>City Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="team : ${allTeams}">
+        <td th:text="${team.getId_team()}"></td>
+        <td th:text="${team.getFirst_name()}"></td>
+        <td th:text="${team.getCity_name()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Add Team</h1>
+<form action="/add-team" method="post">
+    <label for="frist_name">first_name:</label>
+    <input type="text" id="frist_name" name="first_name" required>
+    <br>
+    <label for="city_name">city_name:</label>
+    <input type="text" id="city_name" name="city_name" required>
+    <br>
+
+    <input type="submit" value="Add Team">
+</form>
+</body>
+</html>
