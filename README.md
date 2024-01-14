@@ -30,33 +30,33 @@
 ## Результаты выполнения работы
 ### http://localhost:8081
 Главная страница:
-![image](https://github.com/andiyash/git-branches2/assets/145579445/cc9c9e2d-baf9-41c0-b53e-6a2149df89a5)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/1.png)
 
 Страница со списком игроков:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/8f2d148c-0fe4-4734-941b-cfc86e166f65)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/2.png)
 
 Так если нажать на id игрока этот игрок выведется на отдельную страницу, где есть **возможность удаления** этого игрока:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/6f66c3c6-d571-4c4b-97cd-9951b6d13342)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/3.png)
 
 После клика на **delete**, возвращает на страницу со всеми игроками, где можно увидеть, что игрок удалён:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/cd9f1e52-a782-44d0-bb7e-44be1b7f4001)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/4.png)
 
 Пример вывода **всех команд**:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/cc7cc271-b1e3-4e41-9a37-87919d9910ec)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/5.png)
 
 Пример **добавления** команды:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/295a13a6-1c91-4fdd-8749-13f754fc4628)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/6.png)
 
 
 Также, если кликнуть по кнопке **delete можно удалить команду**.
 Если кликнуть по ID команды, производится переход на отдельную страницу об **информации о команде**:
 
-![image](https://github.com/andiyash/git-branches2/assets/145579445/72ca2a31-8048-4c50-bc46-5897f104be50)
+![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/7.png)
 
 
 
