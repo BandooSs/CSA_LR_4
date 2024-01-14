@@ -1,5 +1,6 @@
 package com.example.LR_2.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,13 @@ public class Player {
     @Column(name = "last_name")
     private String last_name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    /*@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_team")
-    private Team team;
+//    @JsonIgnore
+    private Team team;*/
+
+   @Column(name = "id_team")
+    private long id_team;
+
+
 }

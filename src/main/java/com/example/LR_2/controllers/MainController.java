@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller; // Добавлен импор
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller // Добавлена аннотация @Controller
+@Controller
 public class MainController {
     @GetMapping("/")
     public String home(Model model){

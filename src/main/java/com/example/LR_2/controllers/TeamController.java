@@ -19,7 +19,7 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @GetMapping("/teams")
+    /*@GetMapping("/teams")
     public String home(Model model){
         List<Team> allTeams = teamService.findAll();
         model.addAttribute("allTeams",allTeams);
@@ -29,5 +29,5 @@ public class TeamController {
     public String  createTeam(@ModelAttribute Team newTeam, Model model){
         teamService.saveTeam(newTeam);
         return home(model);
-    }
+    }*/
 }

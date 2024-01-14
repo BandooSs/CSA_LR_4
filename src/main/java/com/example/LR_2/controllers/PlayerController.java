@@ -26,19 +26,19 @@ public class PlayerController {
         this.teamService = teamService;
     }
 
-    @GetMapping("/players")
-    public String home(Model model){
-        List<Player> allPlayers = playerService.finAll();
-        model.addAttribute("allPlayers",allPlayers);
-        return "playersPage";
-    }
+//    @GetMapping("/players")
+//    public String home(Model model){
+//        List<Player> allPlayers = playerService.finAll();
+//        model.addAttribute("allPlayers",allPlayers);
+//        return "playersPage";
+//    }
 
-    @PostMapping("/add-player")
-    public String  createTeam(@ModelAttribute Player newPlayer, @RequestParam("id_team") Long id_team, Model model){
-        Team team = teamService.findById(id_team);
-        newPlayer.setTeam(team);
-
-        playerService.savePlayer(newPlayer);
-        return home(model);
-    }
+//    @PostMapping("/add-player")
+//    public String  createTeam(@ModelAttribute Player newPlayer, @RequestParam("id_team") Long id_team, Model model){
+//        Team team = teamService.findById(id_team);
+//        newPlayer.setTeam(team);
+//
+//        playerService.savePlayer(newPlayer);
+//        return home(model);
+//    }
 }
