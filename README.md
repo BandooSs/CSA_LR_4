@@ -2,7 +2,6 @@
 ## Задание 1.
 Создана новая таблица, хранящая инфорацию о действиях на сайте. (тип действия, название измененнной таблицы, время и информация)
 Таблица:
-![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/1.png)
 
 ## Задание 2.
 
@@ -26,7 +25,7 @@
 
 Пример работы программы (добавление новой команды):
 
-![image](https://github.com/BandooSs/CSA_LR_3/blob/master/screen/4.png)
+![image](https://github.com/BandooSs/CSA_LR_4/blob/master/screen/1.png)
 
 
 
