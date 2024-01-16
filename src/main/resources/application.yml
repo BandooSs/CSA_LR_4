@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: test
+  jackson:
+    mapper:
+      ACCEPT_CASE_INSENSITIVE_ENUMS: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/LR
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 1
+      auto-commit: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.default_schema: public
+  artemis:
+      user:  artemis
+      password:  artemis
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: nikita.kurciyn.2001@gmail.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            required: true
+  jms:
+    pub-sub-domain: true
+server:
+    port: 8081
+application:
+  topic:
+    audit: audit_queue
