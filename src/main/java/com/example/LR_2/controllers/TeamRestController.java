@@ -1,9 +1,11 @@
 package com.example.LR_2.controllers;
 
+import com.example.LR_2.models.AuditEvent;
 import com.example.LR_2.models.Team;
 import com.example.LR_2.requests.TeamCreatReq;
 import com.example.LR_2.service.PlayerService;
 import com.example.LR_2.service.TeamService;
+import com.example.LR_2.utils.EventLogger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,7 +19,7 @@ import static com.example.LR_2.controllers.Mapper2XLT.transform2XLT;
 public class TeamRestController {
     private final PlayerService playerService;
     private final TeamService teamService;
-
+    private final EventLogger eventLogger;
     @RequestMapping(value = "/teams", method = RequestMethod.GET)
     public ResponseEntity<?> home(@RequestHeader("Accept") String acceptHeader) {
         if (acceptHeader.contains(MediaType.TEXT_HTML_VALUE)) {
@@ -68,6 +70,7 @@ public class TeamRestController {
             team.setFirst_name(firstName);
             team.setCity_name(lastName);
             teamService.saveTeam(team);
+            eventLogger.log(team, AuditEvent.CREATE);
             return ResponseEntity.status(HttpStatus.FOUND)
                     .header("Location", "/teams")
                     .build();

@@ -1,10 +1,12 @@
 package com.example.LR_2.controllers;
 
+import com.example.LR_2.models.AuditEvent;
 import com.example.LR_2.models.Player;
 import com.example.LR_2.models.Team;
 import com.example.LR_2.requests.PlayerCreatReq;
 import com.example.LR_2.service.PlayerService;
 import com.example.LR_2.service.TeamService;
+import com.example.LR_2.utils.EventLogger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,7 @@ import static com.example.LR_2.controllers.Mapper2XLT.transform2XLT_player;
 public class PlayerRestController {
     private final PlayerService playerService;
     private final TeamService teamService;
+    private final EventLogger eventLogger;
 
     @RequestMapping(value = "/players", method = RequestMethod.GET)
     public ResponseEntity<?> playerList(@RequestHeader("Accept") String acceptHeader) {
@@ -53,6 +56,7 @@ public class PlayerRestController {
             player.setLast_name(lastName);
             player.setId_team(id_team);
             playerService.savePlayer(player);
+            eventLogger.log(player, AuditEvent.CREATE);
             return ResponseEntity.status(HttpStatus.FOUND)
                     .header("Location", "/players")
                     .build();
